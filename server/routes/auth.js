@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const jsonwebtoken = require('jsonwebtoken')
+const md5 = require('md5')
 
 const User = require('../../models').user
 
@@ -11,7 +12,7 @@ router.post('/login', async (req, res, next) => {
     }
   })
 
-  if (user) {
+  if (user && user.sUserPassword === md5(req.body.password + user.iUserKey)) {
     const accessToken = jsonwebtoken.sign(
       {
         iUserID: user.iUserID,

@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <h1>Login</h1>
-    <b-form @submit.prevent="login">
+  <div id="login">
+    <b-form @submit.prevent="login" autocomplete="off">
       <b-form-group
-        id="label-email"
-        label="Электронная почта"
-        label-for="input-email"
+        id="label-phone"
+        label="Мобильный телефон"
+        label-for="input-phone"
       >
         <b-input
-          ref="phone"
+          id="input-phone"
           v-model.number.trim="phone"
           class="form-control"
+          required
         ></b-input>
       </b-form-group>
       <b-form-group
@@ -29,7 +29,7 @@
         {{ error }}
       </b-alert>
       <b-button :disabled="$auth.busy" type="submit" variant="primary">
-        Login
+        Войти
       </b-button>
     </b-form>
   </div>
@@ -38,6 +38,11 @@
 <script>
 export default {
   layout: 'auth',
+  middleware({ store, redirect }) {
+    if (store.state.auth.user) {
+      return redirect('/')
+    }
+  },
   data() {
     return {
       error: null,
@@ -56,9 +61,26 @@ export default {
           }
         })
         .catch((e) => {
-          this.$set(this, 'error', e)
+          this.$set(this, 'error', 'Неверные имя или пароль')
         })
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#login {
+  height: 100vh;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  width: 300px;
+  padding: 16px;
+  border-radius: 6px;
+  background: white;
+}
+</style>

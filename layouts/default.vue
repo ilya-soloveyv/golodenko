@@ -1,8 +1,8 @@
 <template>
-  <b-container>
+  <div>
     <NavBar />
     <nuxt />
-  </b-container>
+  </div>
 </template>
 
 <script>

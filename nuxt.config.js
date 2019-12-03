@@ -38,6 +38,9 @@ module.exports = {
       logout: '/login'
     }
   },
+  router: {
+    middleware: ['auth']
+  },
   build: {
     extend(config, ctx) {}
   }
