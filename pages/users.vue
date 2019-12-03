@@ -1,7 +1,5 @@
 <template>
-  <b-container>
-    Hello!
-  </b-container>
+  <h1>Users</h1>
 </template>
 
 <script>
