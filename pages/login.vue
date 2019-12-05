@@ -6,12 +6,14 @@
         label="Мобильный телефон"
         label-for="input-phone"
       >
-        <b-input
+        <the-mask
           id="input-phone"
           v-model.number.trim="phone"
+          mask="+7 (###) ###-##-##"
+          type="text"
           class="form-control"
           required
-        ></b-input>
+        />
       </b-form-group>
       <b-form-group
         id="label-password"
@@ -36,8 +38,13 @@
 </template>
 
 <script>
+import { TheMask } from 'vue-the-mask'
+
 export default {
   layout: 'auth',
+  components: {
+    TheMask
+  },
   middleware({ store, redirect }) {
     if (store.state.auth.user) {
       return redirect('/')
@@ -46,8 +53,8 @@ export default {
   data() {
     return {
       error: null,
-      phone: '79037876601',
-      password: 'qwerty'
+      phone: null,
+      password: null
     }
   },
   methods: {
@@ -56,7 +63,7 @@ export default {
       return this.$auth
         .loginWith('local', {
           data: {
-            phone: this.phone,
+            phone: '7' + this.phone,
             password: this.password
           }
         })

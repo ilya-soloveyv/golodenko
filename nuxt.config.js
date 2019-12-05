@@ -13,8 +13,10 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  loading: { color: '#fff' },
-  css: [],
+  loading: { color: '#007bff' },
+  css: [
+    '~/assets/scss/main.scss'
+  ],
   plugins: [],
   buildModules: [
     '@nuxtjs/eslint-module'

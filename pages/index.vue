@@ -1,9 +1,11 @@
 <template>
-  <b-container>
-    <h1>Hello</h1>
-  </b-container>
+  <span>Loading...</span>
 </template>
 
 <script>
-export default {}
+export default {
+  middleware({ redirect }) {
+    return redirect('/patient')
+  }
+}
 </script>
