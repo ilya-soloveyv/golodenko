@@ -41,7 +41,85 @@
             :per-page="limit"
             aria-controls="patients_table"
             align="center"
-          ></b-pagination>
+          >
+            <template v-slot:first-text>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="arcs"
+              >
+                <path d="M11 17l-5-5 5-5M18 17l-5-5 5-5" />
+              </svg>
+            </template>
+            <template v-slot:prev-text>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="arcs"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </template>
+            <template v-slot:next-text>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="arcs"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </template>
+            <template v-slot:last-text>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="arcs"
+              >
+                <path d="M13 17l5-5-5-5M6 17l5-5-5-5" />
+              </svg>
+            </template>
+            <template v-slot:ellipsis-text>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="arcs"
+              >
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+              </svg>
+            </template>
+          </b-pagination>
         </div>
       </div>
     </b-container>

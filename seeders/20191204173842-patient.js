@@ -354,6 +354,216 @@ module.exports = {
           sPatientMiddlename: null,
           sPatientFirstname: 'Люси',
           dDateBirthday: null
+        },
+        {
+          iPatientID: 51,
+          sPatientLastname: 'Хофштадтер',
+          sPatientMiddlename: 'Лики',
+          sPatientFirstname: 'Леонард',
+          dDateBirthday: '1975-04-30'
+        },
+        {
+          iPatientID: 52,
+          sPatientLastname: 'Фаулер',
+          sPatientMiddlename: 'Фара',
+          sPatientFirstname: 'Эми',
+          dDateBirthday: '1975-12-12'
+        },
+        {
+          iPatientID: 53,
+          sPatientLastname: 'Воловиц',
+          sPatientMiddlename: 'Джоэл',
+          sPatientFirstname: 'Говард',
+          dDateBirthday: '1980-12-09'
+        },
+        {
+          iPatientID: 54,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: 'Рамаян',
+          sPatientFirstname: 'Раджеш',
+          dDateBirthday: '1981-04-30'
+        },
+        {
+          iPatientID: 55,
+          sPatientLastname: 'Блум',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Стюарт',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 56,
+          sPatientLastname: 'Крипке',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Барри',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 57,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Прия',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 58,
+          sPatientLastname: null,
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Люси',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 59,
+          sPatientLastname: 'Крипке',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Барри',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 60,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Прия',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 61,
+          sPatientLastname: null,
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Люси',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 62,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: 'Рамаян',
+          sPatientFirstname: 'Раджеш',
+          dDateBirthday: '1981-04-30'
+        },
+        {
+          iPatientID: 63,
+          sPatientLastname: 'Блум',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Стюарт',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 64,
+          sPatientLastname: 'Крипке',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Барри',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 65,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Прия',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 66,
+          sPatientLastname: null,
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Люси',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 67,
+          sPatientLastname: 'Крипке',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Барри',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 68,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Прия',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 69,
+          sPatientLastname: null,
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Люси',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 70,
+          sPatientLastname: 'Хофштадтер',
+          sPatientMiddlename: 'Лики',
+          sPatientFirstname: 'Леонард',
+          dDateBirthday: '1975-04-30'
+        },
+        {
+          iPatientID: 71,
+          sPatientLastname: 'Фаулер',
+          sPatientMiddlename: 'Фара',
+          sPatientFirstname: 'Эми',
+          dDateBirthday: '1975-12-12'
+        },
+        {
+          iPatientID: 72,
+          sPatientLastname: 'Воловиц',
+          sPatientMiddlename: 'Джоэл',
+          sPatientFirstname: 'Говард',
+          dDateBirthday: '1980-12-09'
+        },
+        {
+          iPatientID: 73,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: 'Рамаян',
+          sPatientFirstname: 'Раджеш',
+          dDateBirthday: '1981-04-30'
+        },
+        {
+          iPatientID: 74,
+          sPatientLastname: 'Блум',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Стюарт',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 75,
+          sPatientLastname: 'Крипке',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Барри',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 76,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Прия',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 77,
+          sPatientLastname: null,
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Люси',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 78,
+          sPatientLastname: 'Крипке',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Барри',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 79,
+          sPatientLastname: 'Кутраппали',
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Прия',
+          dDateBirthday: null
+        },
+        {
+          iPatientID: 80,
+          sPatientLastname: null,
+          sPatientMiddlename: null,
+          sPatientFirstname: 'Люси',
+          dDateBirthday: null
         }
       ],
       {}

@@ -19,3 +19,16 @@ h1 {
   margin: 0;
   padding: 0;
 }
+.pagination {
+  .page-item {
+    svg {
+      display: block;
+      stroke: #007bff;
+    }
+    &.disabled {
+      svg {
+        stroke: #dee2e6;
+      }      
+    }
+  }
+}
