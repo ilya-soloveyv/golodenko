@@ -6,7 +6,7 @@
       </b-container>
     </div>
     <b-container>
-      <div>Limit: {{ limit }}</div>
+      <!-- <div>Limit: {{ limit }}</div> -->
       <div id="patient-list">
         <div class="form">
           <b-form-group id="label-search" label-for="input-search">
@@ -50,13 +50,21 @@
 
 <script>
 export default {
-  props: ['limit'],
+  props: {
+    limit: {
+      type: Number,
+      default: 15
+    }
+  },
   data() {
     return {
       page: 1,
       search: null,
       fields: [
-        { key: 'sPatientFullname', label: 'ФИО' },
+        {
+          key: 'sPatientFullname',
+          label: 'ФИО'
+        },
         {
           key: 'dDateBirthday',
           label: 'Дата рождения',
@@ -86,9 +94,6 @@ export default {
   },
   async asyncData({ store, params }) {
     await store.dispatch('patient/getPatients', {})
-  },
-  created() {
-    console.log(this.$route)
   }
 }
 </script>

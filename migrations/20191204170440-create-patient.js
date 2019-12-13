@@ -1,4 +1,5 @@
-'use strict';
+'use strict'
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('patient', {
@@ -21,9 +22,9 @@ module.exports = {
       dDateBirthday: {
         type: Sequelize.DATEONLY
       }
-    });
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('patient');
+    return queryInterface.dropTable('patient')
   }
-};
+}

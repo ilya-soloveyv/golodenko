@@ -14,13 +14,9 @@ module.exports = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#007bff' },
-  css: [
-    '~/assets/scss/main.scss'
-  ],
+  css: ['~/assets/scss/main.scss'],
   plugins: [],
-  buildModules: [
-    '@nuxtjs/eslint-module'
-  ],
+  buildModules: ['@nuxtjs/eslint-module'],
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',

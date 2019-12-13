@@ -3,12 +3,12 @@ const router = Router()
 
 const Patient = require('../../models').patient
 
-router.post('/list', async function (req, res, next) {
-  let page = (req.body.page) ? req.body.page : 1
-  let limit = (req.body.limit) ? req.body.limit : 15
-  let patients = await Patient.paginate({
+router.post('/list', async function(req, res, next) {
+  const page = req.body.page ? req.body.page : 1
+  const limit = req.body.limit ? req.body.limit : 15
+  const patients = await Patient.paginate({
     paginate: limit,
-    page: page
+    page
   })
   res.json(patients)
 })

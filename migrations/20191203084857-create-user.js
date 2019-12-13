@@ -26,7 +26,7 @@ module.exports = {
         allowNull: false
       },
       iUserAdmin: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.TINYINT,
         defaultValue: 0
       }
     })
