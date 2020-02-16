@@ -29,7 +29,8 @@ module.exports = {
   buildModules: ['@nuxtjs/eslint-module'],
   modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/dotenv', '@nuxtjs/moment'],
   axios: {
-    proxy: true
+    proxy: true,
+    https: true
   },
   moment: {
     defaultLocale: 'ru',
