@@ -2,15 +2,22 @@
   <div>
     <NavBar />
     <nuxt />
+    <PatientModal />
+    <UserModal />
+    <notifications group="notify" position="top center" />
   </div>
 </template>
 
 <script>
 import NavBar from '~/components/NavBar'
+import PatientModal from '~/components/PatientModal'
+import UserModal from '~/components/UserModal'
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    PatientModal,
+    UserModal
   }
 }
 </script>

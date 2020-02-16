@@ -13,17 +13,28 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  server: {
+    host: process.env.HOST,
+    port: process.env.PORT
+  },
   loading: { color: '#007bff' },
   css: ['~/assets/scss/main.scss'],
-  plugins: [],
-  buildModules: ['@nuxtjs/eslint-module'],
-  modules: [
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/axios',
-    '@nuxtjs/auth',
-    '@nuxtjs/dotenv'
+  plugins: [
+    { src: '~/plugins/datepicker', ssr: false },
+    { src: '~/plugins/sticky', ssr: false },
+    { src: '~/plugins/notifications', ssr: false },
+    { src: '~/plugins/scrollto', ssr: false },
+    { src: '~/plugins/lazyload', ssr: false }
   ],
-  axios: {},
+  buildModules: ['@nuxtjs/eslint-module'],
+  modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/dotenv', '@nuxtjs/moment'],
+  axios: {
+    proxy: true
+  },
+  moment: {
+    defaultLocale: 'ru',
+    locales: ['ru']
+  },
   auth: {
     strategies: {
       local: {

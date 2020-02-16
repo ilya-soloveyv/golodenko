@@ -24,6 +24,7 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/user', require('./routes/user'))
 app.use('/api/profile', require('./routes/profile'))
 app.use('/api/patient', require('./routes/patient'))
+app.use('/api/event', require('./routes/event'))
 
 async function start() {
   const nuxt = new Nuxt(config)

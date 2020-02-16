@@ -1,31 +1,11 @@
 <template>
   <div id="login">
     <b-form @submit.prevent="login" autocomplete="off">
-      <b-form-group
-        id="label-phone"
-        label="Мобильный телефон"
-        label-for="input-phone"
-      >
-        <the-mask
-          id="input-phone"
-          v-model.number.trim="phone"
-          mask="+7 (###) ###-##-##"
-          type="text"
-          class="form-control"
-          required
-        />
+      <b-form-group id="label-phone" label="Мобильный телефон" label-for="input-phone">
+        <the-mask id="input-phone" v-model.number.trim="phone" mask="+7 (###) ###-##-##" type="text" class="form-control" required />
       </b-form-group>
-      <b-form-group
-        id="label-password"
-        label="Пароль"
-        label-for="input-password"
-      >
-        <b-input
-          id="input-password"
-          v-model="password"
-          type="password"
-          required
-        ></b-input>
+      <b-form-group id="label-password" label="Пароль" label-for="input-password">
+        <b-input id="input-password" v-model="password" type="password" required></b-input>
       </b-form-group>
       <b-alert v-if="error" variant="warning" class="mb-3" show>
         {{ error }}

@@ -11,7 +11,9 @@ module.exports = {
           sUserPhone: '79037876601',
           sUserPassword: '3fc0a7acf087f549ac2b266baf94b8b1', // qwerty
           iUserKey: 123,
-          iUserAdmin: 1
+          iUserAdmin: true,
+          iPatientLimit: 20,
+          iPatientPhoneCode: null
         },
         {
           iUserID: 2,
@@ -19,7 +21,9 @@ module.exports = {
           sUserPhone: '79999999999',
           sUserPassword: '635092b43f6daab6e117b2429f5e6236', // 123456
           iUserKey: 987,
-          iUserAdmin: 0
+          iUserAdmin: false,
+          iPatientLimit: 10,
+          iPatientPhoneCode: null
         }
       ],
       {}

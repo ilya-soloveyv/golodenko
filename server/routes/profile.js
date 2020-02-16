@@ -8,7 +8,7 @@ router.post('/update', async function(req, res, next) {
   await User.update(
     {
       sUserName: user.sUserName,
-      sUserPhone: '7' + user.sUserPhone
+      iPatientLimit: user.iPatientLimit
     },
     {
       where: {
@@ -16,6 +16,7 @@ router.post('/update', async function(req, res, next) {
       }
     }
   )
+  // console.log(user)
   res.json(user)
 })
 

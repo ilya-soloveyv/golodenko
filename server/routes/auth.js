@@ -18,7 +18,8 @@ router.post('/login', async (req, res, next) => {
         iUserID: user.iUserID,
         sUserName: user.sUserName,
         sUserPhone: user.sUserPhone,
-        iUserAdmin: user.iUserAdmin
+        iUserAdmin: user.iUserAdmin,
+        iPatientLimit: user.iPatientLimit
       },
       'dummy'
     )
@@ -36,8 +37,9 @@ router.post('/logout', (req, res, next) => {
   res.sendStatus(200)
 })
 
-router.get('/user', (req, res, next) => {
-  res.json({ user: req.user })
+router.get('/user', async (req, res, next) => {
+  const user = await User.findByPk(req.user.iUserID)
+  res.json({ user })
 })
 
 module.exports = router

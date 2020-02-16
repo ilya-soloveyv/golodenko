@@ -1,0 +1,32 @@
+#patient-list {
+  height: calc(100vh - 56px - 56px);
+  display: flex;
+  flex-direction: column;
+  .form {
+    flex-shrink: 0;
+  }
+  .list {
+    flex-grow: 1;
+    overflow: auto;
+    .empty {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      svg {
+
+      }
+      span {
+        color: grey;
+      }
+    }
+  }
+  .pagi {
+    padding: 1rem 0 0;
+    flex-shrink: 0;
+  }
+}
+.col_dDateBirthday {
+  width: 150px;
+}

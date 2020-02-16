@@ -32,3 +32,11 @@ h1 {
     }
   }
 }
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-right: 0.5rem;
+  }
+}

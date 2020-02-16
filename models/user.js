@@ -27,8 +27,17 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       iUserAdmin: {
-        type: DataTypes.TINYINT,
-        defaultValue: 0
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      iPatientLimit: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 10
+      },
+      iPatientPhoneCode: {
+        type: DataTypes.INTEGER,
+        allowNull: true
       }
     },
     {

@@ -26,8 +26,17 @@ module.exports = {
         allowNull: false
       },
       iUserAdmin: {
-        type: Sequelize.TINYINT,
-        defaultValue: 0
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      iPatientLimit: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 10
+      },
+      iPatientPhoneCode: {
+        type: Sequelize.INTEGER,
+        allowNull: true
       }
     })
   },
