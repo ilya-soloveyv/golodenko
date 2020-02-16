@@ -52,7 +52,7 @@ router.post('/update', async function(req, res, next) {
     })
     const text = urlencode('Ваш пароль от CRM: ' + sUserPassword)
     const sUserPasswordHash = md5(sUserPassword + iUserKey)
-    await axios.get(process.env.SMS_HOST + '?user=' + process.env.SMS_USER + '&pwd=' + process.env.SMS_PASS + '&dadr=' + sUserPhone + '&text=' + text + '&sadr=TESTSMS')
+    axios.get(process.env.SMS_HOST + '?user=' + process.env.SMS_USER + '&pwd=' + process.env.SMS_PASS + '&dadr=' + sUserPhone + '&text=' + text + '&sadr=TESTSMS')
     response.create = await User.create({
       sUserName,
       sUserPhone,
