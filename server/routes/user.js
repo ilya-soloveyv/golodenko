@@ -46,6 +46,7 @@ router.post('/update', async function(req, res, next) {
       length: 6,
       charset: 'alphanumeric'
     })
+    response.sUserPassword = sUserPassword
     const iUserKey = randomstring.generate({
       length: 3,
       charset: 'numeric'

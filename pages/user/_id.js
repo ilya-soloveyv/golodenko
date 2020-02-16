@@ -59,6 +59,14 @@ export default {
           text: 'Пользователь успешно обновлен'
         })
       }
+      if (data.sUserPassword) {
+        this.$notify({
+          group: 'notify',
+          type: 'success',
+          duration: 60000,
+          text: 'Пользователь пользователя ' + data.sUserPassword
+        })
+      }
       this.$router.push('/user/' + iUserID)
     }
   }
