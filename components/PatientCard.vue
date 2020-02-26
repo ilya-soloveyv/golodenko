@@ -14,24 +14,34 @@
         <div class="first">{{ patient.sPatientFirstname }} {{ patient.sPatientMiddlename }}</div>
       </div>
       <div v-if="patient.dDateBirthday" class="date">{{ $moment(patient.dDateBirthday).format('D MMMM YYYY') }}</div>
-      <ul v-if="patient.phones.length" class="phones">
-        <template v-for="(phone, phoneIndex) in patient.phones">
-          <li v-if="phone.iPatientPhoneID" :key="phoneIndex">
-            {{ phone.iPhone }}
-          </li>
-        </template>
+      <ul v-if="phones.length" class="phones">
+        <li v-for="(phone, phoneIndex) in phones" :key="phoneIndex">
+          {{ phone }}
+        </li>
       </ul>
       <b-button v-b-modal.PatientModal variant="primary" size="sm">Редактировать</b-button>
     </div>
-    <!-- {{ patient }} -->
   </div>
 </template>
 
 <script>
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
 export default {
   computed: {
     patient() {
       return this.$store.state.patient.item
+    },
+    phones() {
+      const phones = []
+      this.patient.phones.forEach((phone) => {
+        const phoneNumber = parsePhoneNumberFromString('+7' + phone.iPhone, 'RU')
+        if (phoneNumber && phoneNumber.isValid()) {
+          phones.push(phoneNumber.formatNational())
+        } else {
+          phones.push(phone.iPhone)
+        }
+      })
+      return phones
     }
   }
 }
@@ -91,11 +101,6 @@ export default {
       margin: 0 0 1rem;
       padding: 0;
       list-style: none;
-      li {
-      }
-    }
-    button {
-      // margin-top: 1rem;
     }
   }
 }

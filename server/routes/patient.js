@@ -81,7 +81,7 @@ router.post('/update', async function(req, res, next) {
       } else if (!phone.iPatientPhoneID && !phone.del) {
         await PatientPhones.create({
           iPatientID,
-          iPhone: '7' + phone.iPhone
+          iPhone: phone.iPhone
         })
       } else if (phone.iPatientPhoneID && phone.del) {
         await PatientPhones.destroy({
