@@ -15,7 +15,7 @@
           <b-input-group v-for="(phone, phoneIndex) in phones" :key="phoneIndex" class="mb-1">
             <the-mask :value="phone.iPhone" @keypress.native="updatePhone($event, phoneIndex)" @keyup.native="updatePhone($event, phoneIndex)" @change.native="updatePhone($event, phoneIndex)" mask="+7 (###) ###-##-##" type="text" class="form-control" required />
             <b-input-group-append>
-              <b-button @click="DEL_PHONE(phoneIndex)" variant="danger">
+              <b-button @click="DEL_PHONE(phoneIndex)" variant="danger" class="delPhone">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -115,3 +115,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.delPhone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
