@@ -109,7 +109,7 @@ export default {
     },
     updateDateBirthday(event) {
       const value = moment(event.target.value, 'DD.MM.YYYY')
-      const dDateBirthday = value._isValid ? value : null
+      const dDateBirthday = value._isValid ? moment(value).format('YYYY-MM-DD') : null
       this.$store.dispatch('patient/UPDATE_DATEBIRTHDAY', { dDateBirthday })
     }
   }
