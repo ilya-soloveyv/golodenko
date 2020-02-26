@@ -31,7 +31,11 @@
             <date-picker v-model="dDateBirthday" :language="ru" :full-month-name="true" :monday-first="true" format="d MMMM yyyy" input-class="form-control" />
           </client-only> -->
         </b-form-group>
-        <b-button :disabled="checkUpdate" variant="success" type="submit">Сохранить</b-button>
+        <b-button :disabled="checkUpdate" class="update" variant="success" type="submit">
+          <b-spinner v-if="checkUpdate" small type="grow"></b-spinner>
+          <template v-if="checkUpdate">Идет сохранение</template>
+          <template v-else>Сохранить</template>
+        </b-button>
       </b-form>
       <!-- <pre>{{ $store.state.patient.item }}</pre> -->
     </b-modal>
@@ -126,9 +130,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.delPhone {
+button.delPhone,
+button.update {
   display: flex;
   justify-content: center;
   align-items: center;
+  span {
+    margin-right: 0.5rem;
+  }
 }
 </style>
