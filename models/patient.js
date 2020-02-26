@@ -55,6 +55,7 @@ module.exports = (sequelize, DataTypes) => {
     const search = params.search || false
     const searchArray = search ? search.split(' ') : []
     const searchWhereLike = []
+
     searchArray.forEach((value) => {
       searchWhereLike.push({
         [Op.or]: {

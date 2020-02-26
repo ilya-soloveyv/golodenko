@@ -26,9 +26,10 @@
           <b-button @click.prevent="ADD_PHONE" size="sm" variant="primary">Добавить телефон</b-button>
         </b-form-group>
         <b-form-group id="label-dDateBirthday" label="Дата рождения" label-for="input-dDateBirthday">
-          <client-only>
+          <the-mask :value="dDateBirthday" @change.native="updateDateBirthday($event)" mask="##.##.####" type="text" class="form-control" />
+          <!-- <client-only>
             <date-picker v-model="dDateBirthday" :language="ru" :full-month-name="true" :monday-first="true" format="d MMMM yyyy" input-class="form-control" />
-          </client-only>
+          </client-only> -->
         </b-form-group>
         <b-button variant="success" type="submit">Сохранить</b-button>
       </b-form>
@@ -41,6 +42,7 @@
 import { mapGetters } from 'vuex'
 import { ru } from 'vuejs-datepicker/dist/locale'
 import { TheMask } from 'vue-the-mask'
+import moment from 'moment'
 export default {
   components: {
     TheMask
@@ -83,10 +85,7 @@ export default {
     },
     dDateBirthday: {
       get() {
-        return this.$store.state.patient.item.dDateBirthday
-      },
-      set(dDateBirthday) {
-        this.$store.dispatch('patient/UPDATE_DATEBIRTHDAY', { dDateBirthday })
+        return moment(this.$store.state.patient.item.dDateBirthday).format('DD.MM.YYYY')
       }
     }
   },
@@ -107,6 +106,11 @@ export default {
         iPhone: event.target.value,
         phoneIndex
       })
+    },
+    updateDateBirthday(event) {
+      const value = moment(event.target.value, 'DD.MM.YYYY')
+      const dDateBirthday = value._isValid ? value : null
+      this.$store.dispatch('patient/UPDATE_DATEBIRTHDAY', { dDateBirthday })
     }
   }
 }

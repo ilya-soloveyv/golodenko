@@ -8,7 +8,6 @@ const _ = require('lodash')
 
 const Patient = require('../../models').patient
 const PatientPhones = require('../../models').patientPhone
-// const Event = require('../../models').event
 const File = require('../../models').file
 
 router.post('/list', async function(req, res, next) {
