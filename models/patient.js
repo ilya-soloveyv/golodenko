@@ -75,7 +75,8 @@ module.exports = (sequelize, DataTypes) => {
     const patients = await Patient.paginate({
       paginate: limit,
       page,
-      where: searchWhereLike
+      where: searchWhereLike,
+      order: [['iPatientID', 'DESC']]
     })
 
     return patients

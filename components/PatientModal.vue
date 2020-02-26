@@ -31,7 +31,7 @@
             <date-picker v-model="dDateBirthday" :language="ru" :full-month-name="true" :monday-first="true" format="d MMMM yyyy" input-class="form-control" />
           </client-only> -->
         </b-form-group>
-        <b-button variant="success" type="submit">Сохранить</b-button>
+        <b-button :disabled="checkUpdate" variant="success" type="submit">Сохранить</b-button>
       </b-form>
       <!-- <pre>{{ $store.state.patient.item }}</pre> -->
     </b-modal>
@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       ru,
-      checkUpdate: true
+      checkUpdate: false
     }
   },
   computed: {
@@ -85,15 +85,24 @@ export default {
     },
     dDateBirthday: {
       get() {
-        return moment(this.$store.state.patient.item.dDateBirthday).format('DD.MM.YYYY')
+        const dDateBirthday = this.$store.state.patient.item.dDateBirthday || null
+        return moment(dDateBirthday).format('DD.MM.YYYY')
       }
     }
   },
   methods: {
     async update() {
+      this.$set(this, 'checkUpdate', true)
       await this.$store.dispatch('patient/UPDATE')
+      this.$set(this, 'checkUpdate', false)
       this.$router.push('/patient/' + this.iPatientID)
       this.$root.$emit('bv::hide::modal', 'PatientModal')
+      this.$notify({
+        group: 'notify',
+        type: 'success',
+        duration: 2000,
+        text: 'Успешно обновлено'
+      })
     },
     ADD_PHONE() {
       this.$store.dispatch('patient/ADD_PHONE', {})
