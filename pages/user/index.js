@@ -17,10 +17,5 @@ export default {
     users() {
       return this.$store.state.user.list
     }
-  },
-  methods: {
-    userAdd() {
-      this.$root.$emit('bv::show::modal', 'UserModal')
-    }
   }
 }

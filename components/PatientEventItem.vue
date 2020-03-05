@@ -141,18 +141,19 @@ export default {
   },
   methods: {
     async REMOVE_EVENT(iEventID) {
-      this.$set(this, 'loadingRemove', true)
-      await this.$store.dispatch('patient/REMOVE_EVENT', { iEventID })
-      this.$set(this, 'loadingRemove', false)
-      this.$notify({
-        group: 'notify',
-        type: 'success',
-        duration: 2000,
-        text: 'Событие успешно удалено'
-      })
+      if (confirm('fasdfad')) {
+        this.$set(this, 'loadingRemove', true)
+        await this.$store.dispatch('patient/REMOVE_EVENT', { iEventID })
+        this.$set(this, 'loadingRemove', false)
+        this.$notify({
+          group: 'notify',
+          type: 'success',
+          duration: 2000,
+          text: 'Событие успешно удалено'
+        })
+      }
     },
     childRemoveFile(params) {
-      console.log(params)
       this.$set(this, 'loadingRemove', params.loading)
     },
     async updateEventText() {

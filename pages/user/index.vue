@@ -16,7 +16,6 @@
           </b-row>
         </b-list-group-item>
       </b-list-group>
-      <b-button @click="userAdd" variant="primary">Добавить пользователя</b-button>
       <b-button to="/user/0" variant="primary">Добавить пользователя</b-button>
     </b-container>
   </div>
