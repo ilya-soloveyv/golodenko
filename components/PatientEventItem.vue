@@ -141,7 +141,7 @@ export default {
   },
   methods: {
     async REMOVE_EVENT(iEventID) {
-      if (confirm('fasdfad')) {
+      if (confirm('Вы подтверждаете удаление события? Будут удалены все фотографии')) {
         this.$set(this, 'loadingRemove', true)
         await this.$store.dispatch('patient/REMOVE_EVENT', { iEventID })
         this.$set(this, 'loadingRemove', false)
