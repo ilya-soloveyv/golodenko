@@ -4,7 +4,9 @@
     <nuxt />
     <PatientModal />
     <UserModal />
-    <notifications group="notify" position="top center" />
+    <client-only>
+      <notifications group="notify" position="top center" />
+    </client-only>
   </div>
 </template>
 

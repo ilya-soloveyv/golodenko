@@ -3,24 +3,23 @@
     <b-row>
       <b-col>
         <b-card>
+          <div class="header">
+            <div class="dDate">
+              {{ $moment(event.dDate).format('D MMMM YYYY') }}
+              <span> - {{ $moment(event.dDate).format('dddd') }}</span>
+            </div>
+            <b-button @click="REMOVE_EVENT(event.iEventID)" :disabled="loadingRemove || loadingUpdoad" variant="danger" size="xs" class="removeEvent">
+              <b-spinner v-if="loadingRemove" small type="grow"></b-spinner>
+              <template v-if="loadingRemove">Удаление</template>
+              <template v-else>Удалить</template>
+            </b-button>
+          </div>
           <b-row>
             <b-col>
               <b-form-textarea v-model="tEventText" @change="updateEventText" placeholder="Комментарий..." rows="1" max-rows="10" class="mb-3" />
             </b-col>
-            <b-col md="auto">
-              <b-button @click="REMOVE_EVENT(event.iEventID)" :disabled="loadingRemove || loadingUpdoad" variant="light" class="removeEvent">
-                <b-spinner v-if="loadingRemove" small type="grow"></b-spinner>
-                <template v-if="loadingRemove">Удаление</template>
-                <template v-else>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs">
-                    <polyline points="3 6 5 6 21 6"></polyline>
-                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                  </svg>
-                </template>
-              </b-button>
-            </b-col>
+          </b-row>
+          <b-row>
             <b-col cols="12">
               <ul class="filesList">
                 <li v-for="(file, fileIndex) in event.files" :key="fileIndex" class="preview-img-list">
@@ -38,14 +37,6 @@
             </b-col>
           </b-row>
         </b-card>
-      </b-col>
-      <b-col cols="2">
-        <div class="dDate">
-          <span>
-            {{ $moment(event.dDate).format('D MMMM YYYY') }}
-            {{ $moment(event.dDate).format('dddd') }}
-          </span>
-        </div>
       </b-col>
     </b-row>
   </div>
@@ -174,6 +165,14 @@ export default {
   }
   .card-body {
     padding: 1rem;
+    .header {
+      background: #e9ecef;
+      margin: -1rem -1rem 1rem -1rem;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
   }
   textarea {
     border: none;
@@ -187,6 +186,12 @@ export default {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     li {
       position: relative;
       padding-top: 100%;
@@ -219,36 +224,38 @@ export default {
   }
   .dDate {
     span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      text-align: center;
-      font-size: 12px;
-      background: #e9ecef;
-      position: relative;
-      z-index: 2;
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -1rem;
-        height: 1rem;
-        width: 100%;
-        background: white;
-      }
+      opacity: 0.5;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: center;
+      // border-radius: 0.5rem;
+      // // padding: 0.5rem;
+      // text-align: center;
+      // font-size: 12px;
+      // background: #e9ecef;
+      // position: relative;
+      // z-index: 2;
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: -1rem;
+      //   height: 1rem;
+      //   width: 100%;
+      //   background: white;
+      // }
     }
-    &::before {
-      z-index: 1;
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 50%;
-      height: 100%;
-      width: 1px;
-      background: #e9ecef;
-    }
+    // &::before {
+    //   z-index: 1;
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 50%;
+    //   height: 100%;
+    //   width: 1px;
+    //   background: #e9ecef;
+    // }
   }
   &:last-child {
     .dDate {

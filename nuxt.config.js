@@ -30,7 +30,7 @@ module.exports = {
   modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', '@nuxtjs/auth', '@nuxtjs/dotenv', '@nuxtjs/moment'],
   axios: {
     proxy: true,
-    https: true
+    https: process.env.HTTPS
   },
   moment: {
     defaultLocale: 'ru',

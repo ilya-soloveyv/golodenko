@@ -30,9 +30,10 @@ export default {
   },
   methods: {
     async ADD_EVENT() {
+      const offset = window.innerWidth > 991 ? -16 : -126
       this.$set(this, 'loadingAddEvent', true)
       const iEventID = await this.$store.dispatch('patient/ADD_EVENT', { iPatientID: this.iPatientID })
-      this.$scrollTo('#PatientEventItem' + iEventID, 500, { offset: -16 })
+      this.$scrollTo('#PatientEventItem' + iEventID, 500, { offset })
       this.$notify({
         group: 'notify',
         type: 'success',

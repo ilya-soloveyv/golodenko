@@ -1,15 +1,30 @@
-// .mx-datepicker {
-//   width: auto !important;
-//   display: block !important;
-// }
-// .eventItem {
-//   margin-bottom: 1rem;
-// }
-.patientEventButtonAdd {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  span {
-    margin-right: 0.5rem;
+.patientCardData {
+  @media (max-width: 991px) {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+  .patientEventButtonAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 991px) {
+      margin-left: 1rem;
+      max-width: 50px;
+      // flex-shrink: 1;
+      // width: 100px;
+    }
+    // @media (max-width: 576px) {
+    //   position: fixed;
+    //   z-index: 3;
+    //   right: 1rem;
+    //   bottom: 1rem;
+    //   width: 64px;
+    //   height: 64px;
+    //   border-radius: 50%;
+    //   box-shadow: 0 0 10px black;
+    // }
+    span {
+      margin-right: 0.5rem;
+    }
   }
 }

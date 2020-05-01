@@ -19,7 +19,13 @@
           {{ phone }}
         </li>
       </ul>
-      <b-button v-b-modal.PatientModal variant="primary" size="sm">Редактировать</b-button>
+      <b-button v-b-modal.PatientModal variant="primary" size="sm">
+        <div class="d-none d-lg-block">Редактировать</div>
+        <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs">
+          <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+          <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+        </svg>
+      </b-button>
     </div>
   </div>
 </template>
@@ -50,11 +56,21 @@ export default {
 <style lang="scss" scoped>
 .patientCard {
   margin-bottom: 1rem;
+  @media (max-width: 991px) {
+    margin-bottom: 0;
+    flex-grow: 1;
+    background-color: white;
+    border: 1px solid #dfdfdf;
+    border-radius: 0.5rem;
+  }
   .header {
     background-color: #007bff;
     border-radius: 0.5rem 0.5rem 0 0;
     height: 4rem;
     padding: 0;
+    @media (max-width: 991px) {
+      display: none;
+    }
     .ico {
       margin: 0 auto;
       background-color: white;
@@ -81,12 +97,29 @@ export default {
     text-align: center;
     justify-content: center;
     align-items: center;
+    @media (max-width: 991px) {
+      border: none;
+      border-radius: 0;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      align-items: flex-start;
+      position: relative;
+    }
     .name {
       padding: 0.5rem 0 1rem;
       line-height: 25px;
+      @media (max-width: 991px) {
+        padding: 0 0 0.5rem;
+        text-align: left;
+        // display: flex;
+      }
       .last {
         font-weight: 600;
         font-size: 20px;
+        @media (max-width: 991px) {
+          // font-weight: normal;
+          // font-size: 1rem;
+          // padding-right: 0.25rem;
+        }
       }
     }
     .date {
@@ -96,11 +129,34 @@ export default {
       padding: 0.25rem 1rem;
       margin: 0 0 1rem;
       border-radius: 12px;
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+    button {
+      @media (max-width: 991px) {
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        padding: 0.25rem;
+      }
     }
     ul.phones {
       margin: 0 0 1rem;
       padding: 0;
       list-style: none;
+      @media (max-width: 991px) {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-size: 12px;
+        height: 18px;
+        overflow: hidden;
+        li {
+          padding-right: 0.5rem;
+        }
+      }
     }
   }
 }
