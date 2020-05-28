@@ -26,7 +26,7 @@
             <b-list-group-item v-for="(patient, patientIndex) in patients.docs" :key="patientIndex" :to="'/patient/' + patient.iPatientID">
               <b-row>
                 <b-col>{{ patient.sPatientLastname }} {{ patient.sPatientFirstname }} {{ patient.sPatientMiddlename }}</b-col>
-                <b-col cols="2">{{ patient.dDateBirthday }}</b-col>
+                <b-col sm="3" md="2" class="d-none d-sm-block">{{ patient.dDateBirthday }}</b-col>
               </b-row>
             </b-list-group-item>
           </b-list-group>
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="pagi">
-          <b-pagination v-model="page" :total-rows="patients.total" :per-page="$auth.state.user.iPatientLimit" aria-controls="patients_table" align="center">
+          <b-pagination v-model="page" :total-rows="patients.total" :per-page="$auth.$state.user.iPatientLimit" aria-controls="patients_table" align="center">
             <template v-slot:first-text>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5" /></svg>
             </template>
