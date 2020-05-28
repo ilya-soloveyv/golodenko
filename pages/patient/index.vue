@@ -16,8 +16,10 @@
                 <b-form-input id="input-search" v-model="search" @keyup="searchKeyUp" type="text" placeholder="Введите ФИО или телефон пациента" autocomplete="off"></b-form-input>
               </b-form-group>
             </b-col>
-            <b-col cols="2">
-              <b-button @click="openPatientModal" variant="primary" block>Добавить</b-button>
+            <b-col cols="auto">
+              <b-button @click="openPatientModal" variant="primary" block>
+                Добавить
+              </b-button>
             </b-col>
           </b-row>
         </div>
